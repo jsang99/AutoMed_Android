@@ -14,20 +14,24 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_welcome);
+        // Assigning content to variables
         btContinue = (Button) findViewById(R.id.btContinue);
-        etIP = (EditText)findViewById()
+        etIP = (EditText)findViewById(R.id.etIP);
+        // On click actions
         btContinue.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        openNewActivity();
+                        openAlarmStatusActivity();
                     }
                 });
     }
-
-    private void openNewActivity() {
-        Intent intent = new Intent(this, AlarmStatusViewActivity.class);
+    private void openAlarmStatusActivity() {
+        String IP_address = etIP.getText().toString();
+        Intent intent = new Intent(this, AlarmStatusActivity.class);
         startActivity(intent);
+        // TODO: send IP_address to server
+        // TODO: fetch alarm status from IP address
     }
 }

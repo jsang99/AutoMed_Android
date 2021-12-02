@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoMed">
         <activity
+            android:name=".AlarmSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
@@ -18,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AlarmStatusActivity" />
     </application>
 
 </manifest>
