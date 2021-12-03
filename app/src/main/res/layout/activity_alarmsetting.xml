@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,6 +9,29 @@
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Alarm"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvTimeDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Time"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,26 +47,36 @@
                 android:text="Alarm 1"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvTimeDisplay1"
+            <EditText
+                android:id="@+id/etTimerHH1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvStatus1"
+            <EditText
+                android:id="@+id/etTimerMM1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:textSize="16sp">
 
             <TextView
                 android:id="@+id/tvTime2"
@@ -54,19 +86,28 @@
                 android:text="Alarm 2"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvTimeDisplay2"
+            <EditText
+                android:id="@+id/etTimerHH2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvStatus2"
+            <EditText
+                android:id="@+id/etTimerMM2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -83,19 +124,28 @@
                 android:text="Alarm 3"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvTimeDisplay3"
+            <EditText
+                android:id="@+id/etTimerHH3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvStatus3"
+            <EditText
+                android:id="@+id/etTimerMM3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -112,28 +162,37 @@
                 android:text="Alarm 4"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvTimeDisplay4"
+            <EditText
+                android:id="@+id/etTimerHH4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tvStatus4"
+            <EditText
+                android:id="@+id/etTimerMM4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:minHeight="48dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </LinearLayout>
 
     <Button
-        android:id="@+id/btSetting"
+        android:id="@+id/btApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:text="Setting" />
+        android:layout_marginBottom="30dp"
+        android:text="Apply" />
 </RelativeLayout>

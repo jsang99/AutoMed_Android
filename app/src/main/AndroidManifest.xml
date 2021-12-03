@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlarmStatusActivity" />
+        <activity
+            android:name=".AlarmStatusActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
