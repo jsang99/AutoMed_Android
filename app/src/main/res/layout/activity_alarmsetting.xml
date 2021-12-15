@@ -24,12 +24,20 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvTimeDisplay"
+                android:id="@+id/tvTimeDisplayHH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Time"
+                android:text="Hour"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvTimeDisplayMM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Minute"
+                android:textSize="16sp"/>
 
         </LinearLayout>
 

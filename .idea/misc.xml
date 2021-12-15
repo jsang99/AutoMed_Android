@@ -3,8 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_alarmsetting.xml" value="0.3376889451245383" />
-        <entry key="app/src/main/res/layout/activity_alarmstatus.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_alarmsetting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_alarmstatus.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2270859175450433" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.1296875" />
       </map>

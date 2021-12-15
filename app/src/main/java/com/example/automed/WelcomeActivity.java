@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class WelcomeActivity extends AppCompatActivity {
+    public static String IP_address;
     // xml objects
     EditText etIP;
     Button btContinue;
@@ -29,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 });
     }
     private void openAlarmStatusActivity() {
-        String IP_address = etIP.getText().toString();
+        IP_address = etIP.getText().toString();
         Intent intent = new Intent(this, AlarmStatusActivity.class);
         startActivity(intent);
         // TODO: send IP_address to server
