@@ -33,7 +33,6 @@ public class WelcomeActivity extends AppCompatActivity {
         IP_address = etIP.getText().toString();
         Intent intent = new Intent(this, AlarmStatusActivity.class);
         startActivity(intent);
-        // TODO: send IP_address to server
-        // TODO: fetch alarm status from IP address
+
     }
 }

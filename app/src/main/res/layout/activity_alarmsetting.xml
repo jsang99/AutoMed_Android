@@ -47,8 +47,8 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvTime1"
+            <Switch
+                android:id="@+id/swTime1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -86,8 +86,8 @@
             android:orientation="horizontal"
             android:textSize="16sp">
 
-            <TextView
-                android:id="@+id/tvTime2"
+            <Switch
+                android:id="@+id/swTime2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -124,8 +124,8 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvTime3"
+            <Switch
+                android:id="@+id/swTime3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -162,8 +162,8 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvTime4"
+            <Switch
+                android:id="@+id/swTime4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

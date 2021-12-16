@@ -25,10 +25,10 @@ public class AlarmStatusActivity extends AppCompatActivity{
     TextView tvTimeDisplay2;
     TextView tvTimeDisplay3;
     TextView tvTimeDisplay4;
-    Switch swAlarm1;
-    Switch swAlarm2;
-    Switch swAlarm3;
-    Switch swAlarm4;
+    TextView tvAlarm1;
+    TextView tvAlarm2;
+    TextView tvAlarm3;
+    TextView tvAlarm4;
     public static String allTime;
     public static String status1;
     public static String hour1;
@@ -56,24 +56,11 @@ public class AlarmStatusActivity extends AppCompatActivity{
         tvTimeDisplay2 = (TextView) findViewById(R.id.tvTimeDisplay2);
         tvTimeDisplay3 = (TextView) findViewById(R.id.tvTimeDisplay3);
         tvTimeDisplay4 = (TextView) findViewById(R.id.tvTimeDisplay4);
-        swAlarm1 = (Switch) findViewById(R.id.swAlarm1);
-        swAlarm2 = (Switch) findViewById(R.id.swAlarm2);
-        swAlarm3 = (Switch) findViewById(R.id.swAlarm3);
-        swAlarm4 = (Switch) findViewById(R.id.swAlarm4);
+        tvAlarm1 = (TextView) findViewById(R.id.tvAlarm1);
+        tvAlarm2 = (TextView) findViewById(R.id.tvAlarm2);
+        tvAlarm3 = (TextView) findViewById(R.id.tvAlarm3);
+        tvAlarm4 = (TextView) findViewById(R.id.tvAlarm4);
 
-        // setting switch texts
-        swAlarm1.setTextOn("On");
-        swAlarm1.setTextOff("Off");
-        swAlarm1.setShowText(true);
-        swAlarm2.setTextOn("On");
-        swAlarm2.setTextOff("Off");
-        swAlarm2.setShowText(true);
-        swAlarm3.setTextOn("On");
-        swAlarm3.setTextOff("Off");
-        swAlarm3.setShowText(true);
-        swAlarm4.setTextOn("On");
-        swAlarm4.setTextOff("Off");
-        swAlarm4.setShowText(true);
         // delay handler
         final Handler handler = new Handler();
         // display after delay so every thing is uptodate
@@ -84,15 +71,6 @@ public class AlarmStatusActivity extends AppCompatActivity{
                 displayFetchedText();
             }
         }, 3000);
-
-        // change switch texts on toggle
-        swAlarm1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // TODO: get time text shows 1 at certain position in the string
-            }
-        });
-        //TODO: repeat above for 3 other alarms
 
         // "Setting" button clicked
         btSetting.setOnClickListener(
@@ -141,7 +119,6 @@ public class AlarmStatusActivity extends AppCompatActivity{
                 });
             }
         }).start();
-        return ;
     }
 
     public static int nthIndexOf(String source, String sought, int n) {
@@ -163,19 +140,19 @@ public class AlarmStatusActivity extends AppCompatActivity{
     }
 
     private void parseAllTime() {
-        status1="-"+allTime.substring(0,nthIndexOf(allTime,"-", 1));
+        status1=allTime.substring(0,nthIndexOf(allTime,"-", 1));
         hour1=allTime.substring(nthIndexOf(allTime,"-", 1)+1,nthIndexOf(allTime,"-", 2));
         min1=allTime.substring(nthIndexOf(allTime,"-", 2)+1,nthIndexOf(allTime,"-", 3));
 
-        status2=allTime.substring(nthIndexOf(allTime,"-", 3),nthIndexOf(allTime,"-", 4));
+        status2=allTime.substring(nthIndexOf(allTime,"-", 3)+1,nthIndexOf(allTime,"-", 4));
         hour2=allTime.substring(nthIndexOf(allTime,"-", 4)+1,nthIndexOf(allTime,"-", 5));
         min2=allTime.substring(nthIndexOf(allTime,"-", 5)+1,nthIndexOf(allTime,"-", 6));
 
-        status3=allTime.substring(nthIndexOf(allTime,"-", 6),nthIndexOf(allTime,"-", 7));
+        status3=allTime.substring(nthIndexOf(allTime,"-", 6)+1,nthIndexOf(allTime,"-", 7));
         hour3=allTime.substring(nthIndexOf(allTime,"-", 7)+1,nthIndexOf(allTime,"-", 8));
         min3=allTime.substring(nthIndexOf(allTime,"-", 8)+1,nthIndexOf(allTime,"-", 9));
 
-        status4=allTime.substring(nthIndexOf(allTime,"-", 9),nthIndexOf(allTime,"-", 10));
+        status4=allTime.substring(nthIndexOf(allTime,"-", 9)+1,nthIndexOf(allTime,"-", 10));
         hour4=allTime.substring(nthIndexOf(allTime,"-", 10)+1,nthIndexOf(allTime,"-", 11));
         min4=allTime.substring(nthIndexOf(allTime,"-", 11)+1);
 
@@ -192,22 +169,21 @@ public class AlarmStatusActivity extends AppCompatActivity{
     private String determineStatus(String str){
 
         String statusMsg = "error";
-        if (str.equals("-0")){
+        if (str.equals("0")){
             statusMsg = "Deactivated";
         }
-        if (str.equals("-1")){
+        if (str.equals("1")){
             statusMsg = "Pending"; // for tomorrow
         }
-        if (str.equals("-2")){
+        if (str.equals("2")){
             statusMsg = "Pending"; // for today
         }
-        if (str.equals("-3")){
+        if (str.equals("3")){
             statusMsg = "Pill Taken";
         }
-        if (str.equals("-4")){
+        if (str.equals("4")){
             statusMsg = "Pill Not Taken";
         }
-
         return statusMsg;
     }
 
@@ -216,20 +192,14 @@ public class AlarmStatusActivity extends AppCompatActivity{
         tvTimeDisplay2.setText(hour2 + ":" + min2);
         tvTimeDisplay3.setText(hour3 + ":" + min3);
         tvTimeDisplay4.setText(hour4 + ":" + min4);
-        /*swAlarm1.setText(status1);
-        swAlarm2.setText(status2);
-        swAlarm3.setText(status3);
-        swAlarm4.setText(status4);*/
-        System.out.println(status1.getClass());
-        //System.out.println("["+status1+"]");
         String msg1 = determineStatus(status1);
         String msg2 = determineStatus(status2);
         String msg3 = determineStatus(status3);
         String msg4 = determineStatus(status4);
-        swAlarm1.setText(msg1);
-        swAlarm2.setText(msg2);
-        swAlarm3.setText(msg3);
-        swAlarm4.setText(msg4);
+        tvAlarm1.setText(msg1);
+        tvAlarm2.setText(msg2);
+        tvAlarm3.setText(msg3);
+        tvAlarm4.setText(msg4);
     }
 
     private void openAlarmSettingActivity() {
