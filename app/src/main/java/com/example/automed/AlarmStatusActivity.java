@@ -68,6 +68,8 @@ public class AlarmStatusActivity extends AppCompatActivity{
             @Override
             public void run() {
                 // Do something after 5s = 5000ms
+                getAllTime();
+
                 displayFetchedText();
             }
         }, 3000);
@@ -85,6 +87,7 @@ public class AlarmStatusActivity extends AppCompatActivity{
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                getAllTime();
                 displayFetchedText();
                 pullToRefresh.setRefreshing(false);
             }
@@ -114,7 +117,7 @@ public class AlarmStatusActivity extends AppCompatActivity{
                         allTime = builder.toString();
                         parseAllTime();
                         Context context = getApplicationContext();
-                        Toast.makeText(context, builder.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Data Fetched", Toast.LENGTH_LONG).show();
                     }
                 });
             }
